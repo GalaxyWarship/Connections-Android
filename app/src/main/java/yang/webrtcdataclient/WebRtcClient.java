@@ -101,6 +101,34 @@ public class WebRtcClient {
         iceServers.add(new PeerConnection.IceServer("stun:stun.l.google.com:19302"));
         iceServers.add(new PeerConnection.IceServer("stun:stunserver.org:3478"));
         iceServers.add(new PeerConnection.IceServer("stun:stun.qq.com:3478"));
+        // just for test.
+        iceServers.add(new PeerConnection.IceServer("stun:stun01.sipphone.com"));
+        iceServers.add(new PeerConnection.IceServer("stun:stun.ekiga.net"));
+        iceServers.add(new PeerConnection.IceServer("stun:stun.fwdnet.net"));
+
+//        iceServers.add(new PeerConnection.IceServer("stun:stun01.sipphone.com"));
+//        iceServers.add(new PeerConnection.IceServer("stun:stun.ekiga.net"));
+//        iceServers.add(new PeerConnection.IceServer("stun:stun.fwdnet.net"));
+//        iceServers.add(new PeerConnection.IceServer("stun:stun.ideasip.com"));
+//        iceServers.add(new PeerConnection.IceServer("stun:stun.iptel.org"));
+//        iceServers.add(new PeerConnection.IceServer("stun:stun.rixtelecom.se"));
+//        iceServers.add(new PeerConnection.IceServer("stun:stun.schlund.de"));
+//        iceServers.add(new PeerConnection.IceServer("stun:stun.l.google.com:19302"));
+//        iceServers.add(new PeerConnection.IceServer("stun:stun1.l.google.com:19302"));
+//        iceServers.add(new PeerConnection.IceServer("stun:stun2.l.google.com:19302"));
+//        iceServers.add(new PeerConnection.IceServer("stun:stun3.l.google.com:19302"));
+//        iceServers.add(new PeerConnection.IceServer("stun:stun4.l.google.com:19302"));
+//        iceServers.add(new PeerConnection.IceServer("stun:stunserver.org"));
+//        iceServers.add(new PeerConnection.IceServer("stun:stun.softjoys.com"));
+//        iceServers.add(new PeerConnection.IceServer("stun:stun.voiparound.com"));
+//        iceServers.add(new PeerConnection.IceServer("stun:stun.voipbuster.com"));
+//        iceServers.add(new PeerConnection.IceServer("stun:stun.voipstunt.com"));
+//        iceServers.add(new PeerConnection.IceServer("stun:stun.voxgratia.org"));
+
+//        iceServers.add(new PeerConnection.IceServer("turn:numb.viagenie.ca", "muazkh", "webrtc@live.com"));
+//        iceServers.add(new PeerConnection.IceServer("turn:192.158.29.39:3478?transport=udp", "JZEOEt2V3Qb0y27GRntt2u2PAYA=", "28224511:1379330808"));
+//        iceServers.add(new PeerConnection.IceServer("turn:192.158.29.39:3478?transport=tcp", "JZEOEt2V3Qb0y27GRntt2u2PAYA=", "28224511:1379330808"));
+
     }
 
     public void setWebRtcListener(WebRtcListener webRtcListener) {
