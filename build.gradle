@@ -15,6 +15,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        maven { url 'http://mx.git.com:8098/nexus/content/repositories/releases/' }
     }
 }
 

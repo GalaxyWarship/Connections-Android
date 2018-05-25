@@ -10,14 +10,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.List;
-
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, WebRtcClient.WebRtcListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView tvContent;
     private EditText editText;
 
-    private WebRtcClient rtcClient;
     private StringBuilder sb = new StringBuilder();
     private RecyclerView recyclerView;
     private ListAdapter adapter;
@@ -26,8 +23,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        rtcClient = new WebRtcClient();
-        rtcClient.setWebRtcListener(this);
         tvContent = (TextView) findViewById(R.id.tv_content);
         tvContent.setMovementMethod(new ScrollingMovementMethod());
         editText = (EditText) findViewById(R.id.edit);
@@ -56,43 +51,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_init:
-                rtcClient.sendInitMessage();
+//                rtcClient.sendInitMessage();
                 showSendMessage("init");
                 break;
             case R.id.btn_send:
                 String message = editText.getText().toString();
-                rtcClient.sendDataMessageToAllPeer(message);
+//                rtcClient.sendDataMessageToAllPeer(message);
                 showSendMessage(message);
                 break;
             default:
                 break;
         }
-    }
-
-    @Override
-    public void onReceiveDataChannelMessage(final String message) {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                showReceiveMessage(message);
-            }
-        });
-    }
-
-    @Override
-    public void onReceiveOtherMessage(int type, final Object parameter) {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                //noinspection unchecked
-                adapter.setUserList((List<User>) parameter);
-            }
-        });
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        rtcClient.release();
     }
 }
