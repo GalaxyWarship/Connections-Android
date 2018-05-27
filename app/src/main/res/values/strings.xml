@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Connect</string>
+    <string name="register">Register</string>
+    <string name="hint_email">please input your email</string>
 </resources>
